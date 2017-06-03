@@ -1,0 +1,24 @@
+<h1>Empresas</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+        <thead class="thead-inverse">
+        <tr>
+          <th>#</th>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Actividad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of empresas">
+          <th scope="row"></th>
+          <td>{{empresa.id}}</td>
+          <td>{{empresa.nombre}}</td>
+          <td>{{empresa.actividad}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

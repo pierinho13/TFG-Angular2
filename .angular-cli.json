@@ -2,12 +2,13 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
     "version": "1.0.0-beta.32.3",
-    "name": "static"
+    "name": "Nominas TFG"
   },
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "../../WebContent",
+
       "assets": [
         "assets",
         "favicon.ico"
@@ -19,9 +20,14 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
+         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/tether/dist/js/tether.min.js",
+        "../node_modules/jquery/dist/jquery.slim.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
