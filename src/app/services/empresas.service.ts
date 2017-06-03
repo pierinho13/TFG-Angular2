@@ -7,6 +7,6 @@ export class EmpresaService {
   constructor(private http:Http) {
   }
   getHeroes(){
-    return this.http.get('/ajustes/empresas/todos.json').map(res=>res.json());
+    return this.http.get('http://localhost:8020/nominasApi/empresas').map(res=>res.json());
   }
 }
