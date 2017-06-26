@@ -14,8 +14,14 @@ export class EmpresaService {
     let url = `/initial-data`;
     return this.http.get(url).map(respuesta=>{
       console.log("respuesta es: ");
+      if( respuesta && respuesta.text() && respuesta.text().indexOf( 'data-login="PAGINA_DE_LOGIN"' ) != -1 ){
+            console.log('Entre a salirme');
+          window.location.href='/logout';
+          return;
+      }
       console.log(respuesta.json());
-     return  respuesta.json();
+      return  respuesta.json();
+
     });
   }
 

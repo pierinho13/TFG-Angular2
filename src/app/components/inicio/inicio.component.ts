@@ -15,7 +15,9 @@ datos:any;
   ngOnInit() {
     this.empresaService.getDataPrueba().subscribe(mensaje =>{
       console.log(mensaje);
-      this.datos = mensaje.data;
+      if(mensaje){
+        this.datos = mensaje.data;
+      }
     });
   }
 
