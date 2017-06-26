@@ -1,3 +1,10 @@
-<p>
-  inicio works!
-</p>
+<div *ngIf="datos"class="main main-container">
+  <div class="row">
+    <h1>
+      Bienvenido {{datos.nombreEmpleado}}
+    </h1>
+  </div>
+  <div class="row">
+      <h3>{{datos.empresaNombre}}</h3>
+  </div>
+</div>

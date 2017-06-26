@@ -11,9 +11,6 @@ export class EmpresasComponent implements OnInit {
   empresas:any[];
 
   constructor(private empresaService:EmpresaService) {
-    this.empresaService.getHeroes().subscribe(data=>{
-      this.empresas=data;
-    });
    }
 
 

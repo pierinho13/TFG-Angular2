@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpresaService } from '../../services/empresas.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+datos:any;
+
+  constructor(private empresaService:EmpresaService) { }
 
   ngOnInit() {
+    this.empresaService.getDataPrueba().subscribe(mensaje =>{
+      console.log(mensaje);
+      this.datos = mensaje.data;
+    });
   }
 
 }
