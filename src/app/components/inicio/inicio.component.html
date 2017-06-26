@@ -1,10 +1,18 @@
 <div *ngIf="datos"class="main main-container">
   <div class="row">
-    <h1>
-      Bienvenido {{datos.nombreEmpleado}}
-    </h1>
+    <div class="jumbotron">
+    <h1 class="display-3">Bienvenido {{datos.nombreEmpleado}}</h1>
+    <p class="lead">En esta pantalla obtenemos los datos según el usuario que ha iniciado
+    sesión. Perteneces a la empresa "{{datos.empresaNombre}}"</p>
+    <hr class="my-4">
+    <p>Tu usuario es el siguiente: {{datos.username}}</p>
+    <p class="lead">
+      <a [routerLink]="['/empresa']" class="btn btn-primary btn-lg" href="#" role="button">Ir a datos de tu empresa</a>
+    </p>
   </div>
+</div>
+    <h1>
+    </h1>
   <div class="row">
-      <h3>{{datos.empresaNombre}}</h3>
   </div>
 </div>

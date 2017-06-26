@@ -13,9 +13,10 @@ datos:any;
   constructor(private empresaService:EmpresaService) { }
 
   ngOnInit() {
-    this.empresaService.getDataPrueba().subscribe(mensaje =>{
-      console.log(mensaje);
-      if(mensaje){
+    this.empresaService.getInitData().subscribe(mensaje =>{
+
+      if(mensaje) {
+        console.log(mensaje);
         this.datos = mensaje.data;
       }
     });

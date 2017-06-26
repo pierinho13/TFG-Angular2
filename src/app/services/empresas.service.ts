@@ -3,39 +3,42 @@ import {Http,Headers} from '@angular/http';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Rx';
 import { AppResponse} from '../components/response/app-response.interface';
+import { SessionService} from './session.service';
 
 @Injectable()
 export class EmpresaService {
-  constructor(private http:Http) {
+  constructor(private http:Http, private sessionService:SessionService) {
   }
 
-  getDataPrueba() {
-    console.log("estoy en getDataPrueba");
+  getInitData() {
+    console.log("estoy en getInitData");
     let url = `/initial-data`;
+
     return this.http.get(url).map(respuesta=>{
-      console.log("respuesta es: ");
-      if( respuesta && respuesta.text() && respuesta.text().indexOf( 'data-login="PAGINA_DE_LOGIN"' ) != -1 ){
-            console.log('Entre a salirme');
-          window.location.href='/logout';
+      if( !this.sessionService.isValidSession(respuesta) ){
+          this.sessionService.invalidSession();
           return;
       }
+      console.log("respuesta es: ");
       console.log(respuesta.json());
       return  respuesta.json();
-
     });
   }
 
-  // initialData() : Observable<AppResponse>
-  // {
-  //
-  //     return this.http.get( "/initial-data").map( ( _value  ) => {
-  //         console.log("values es: ");
-  //         console.log(_value);
-  //         return _value.json();
-  //
-  //     } ).catch( ( _err : AppResponse ) => {
-  //
-  //         return Observable.throw( _err );
-  //     } );
-  // }
+  getEmpresa() {
+    console.log("estoy en getInitData");
+    let url = `/app/empresa`;
+
+    return this.http.get(url).map(respuesta=>{
+      if( !this.sessionService.isValidSession(respuesta) ){
+          this.sessionService.invalidSession();
+          return;
+      }
+      console.log("respuesta es: ");
+      console.log(respuesta.json());
+      return  respuesta.json();
+    });
+  }
+
+
 }
