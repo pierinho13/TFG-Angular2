@@ -10,6 +10,7 @@ import { EmpleadosComponent } from './components/empleados/empleados.component';
 import { EmpresasComponent } from './components/empresas/empresas.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
 import {EmpresaComponent} from './components/empresa/empresa.component';
+import { EditarEmpresaComponent } from './components/empresa/editar-empresa/editar-empresa.component';
 //rutas
 import {APP_ROUTING} from './app.routes';
 //services
@@ -25,7 +26,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     EmpleadosComponent,
     EmpresaComponent,
     EmpresasComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    EditarEmpresaComponent
   ],
   imports: [
     BrowserModule,

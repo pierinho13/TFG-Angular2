@@ -9,6 +9,7 @@ import { EmpresaService } from '../../services/empresas.service';
 export class EmpresaComponent implements OnInit {
 
  empresa:any;
+ mostrarJson:boolean = false;
 
   constructor(private empresaService:EmpresaService) { }
 
@@ -20,5 +21,8 @@ export class EmpresaComponent implements OnInit {
         this.empresa = mensaje.data;
       }
     });
+  }
+  cambiaMostrarJson(){
+    this.mostrarJson = !this.mostrarJson;
   }
 }

@@ -51,6 +51,11 @@
 				{{empresa.fechaAlta | date}}
 			</p>
 		</div>
+    <div style="text-align:right;margin-bottom:30px;" class="col-md-12">
+      <button type="button" [routerLink]="['/empresa','editar',empresa.id]"
+       class="btn btn-outline-success"> Editar datos de la empresa</button>
+    </div>
+    <br>
 		<div class="col-md-12">
 			<h3>
 				Los usuarios de la empresa se muestran en la siguiente tabla:
@@ -76,6 +81,9 @@
 			  </tbody>
 			</table>
 		</div>
-      <pre>{{empresa | json}}</pre>
+    <div class="col-md-12">
+      <button type="button" class="btn btn-outline-primary" (click)="cambiaMostrarJson()" >Mostrar/ocultar información de programación</button>
+      <pre *ngIf="mostrarJson">{{empresa | json}}</pre>
+    </div>
 	</div>
 </div>
