@@ -1,4 +1,81 @@
 <p>
   empresa works!
 </p>
-<pre>{{empresa | json}}</pre>
+<div class="main main-container">
+	<div *ngIf="empresa" class="row">
+		<div class="col-md-12">
+      <h3>
+				Nombre:
+			</h3>
+			<p>
+				{{empresa.nombre}}
+			</p>
+		</div>
+		<div class="col-md-12">
+			<h3>
+				Nombre comercial:
+			</h3>
+			<p>
+				{{empresa.nombreComercial}}
+			</p>
+		</div>
+		<div class="col-md-12">
+			<h3>
+				Descripcion:
+			</h3>
+			<p>
+				{{empresa.descripcion}}
+			</p>
+		</div>
+		<div class="col-md-12">
+			<h3>
+				Actividad:
+			</h3>
+			<p>
+				{{empresa.actividad}}
+			</p>
+		</div>
+		<div class="col-md-12">
+			<h3>
+				Sector:
+			</h3>
+			<p>
+				{{empresa.sector}}
+			</p>
+		</div>
+		<div class="col-md-12">
+			<h3>
+				Fecha de alta:
+			</h3>
+			<p>
+				{{empresa.fechaAlta | date}}
+			</p>
+		</div>
+		<div class="col-md-12">
+			<h3>
+				Los usuarios de la empresa se muestran en la siguiente tabla:
+			</h3>
+			<table *ngIf="empresa.usuarios" class="table">
+			  <thead class="thead-inverse">
+			    <tr>
+			      <th>#</th>
+			      <th>Usuario</th>
+			      <th>Empleado</th>
+			      <th>Cargo</th>
+			      <th>Fecha alta</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr *ngFor="let usuario of empresa.usuarios;let i = index">
+			      <th scope="row">{{i+1}}</th>
+			      <td>{{usuario.username}}</td>
+			      <td>{{usuario.empleado.nombreCompleto}}</td>
+			      <td>{{usuario.empleado.cargo}}</td>
+			      <td>{{usuario.fechaAlta | date}}</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+      <pre>{{empresa | json}}</pre>
+	</div>
+</div>
