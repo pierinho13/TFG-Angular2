@@ -1,4 +1,4 @@
-import { AppError } from './app-error.model';
+import { AppError } from './app-error.interface';
 
 export interface AppErrors
 {

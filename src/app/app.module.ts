@@ -13,8 +13,10 @@ import {EmpresaComponent} from './components/empresa/empresa.component';
 //rutas
 import {APP_ROUTING} from './app.routes';
 //services
-import {EmpresaService} from './services/empresas.service';
 import {SessionService} from './services/session.service';
+import {EmpresaService} from './services/empresas.service';
+//para ng routes
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
