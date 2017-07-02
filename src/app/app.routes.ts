@@ -9,7 +9,6 @@ const APP_ROUTES: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'empresas', component: EmpresasComponent },
   { path: 'empresa', component: EmpresaComponent },
-  { path: 'empresa', component: EmpresaComponent },
   { path: 'empresa/editar/:id', component: EditarEmpresaComponent },
   { path: 'empleados', component: EmpleadosComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'inicio' }
