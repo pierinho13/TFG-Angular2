@@ -1,3 +1,9 @@
-<p>
-  empleados works!
-</p>
+<div *ngIf="empleados && empleados.content" class="main main-container">
+  <ng2-smart-table
+  [settings]="configuracionTabla" [source]="empleados.content"></ng2-smart-table>
+  <br><br>
+  <div class="col-md-12">
+    <button type="button" class="btn btn-outline-primary" (click)="cambiaMostrarJson()" >Mostrar/ocultar información de programación</button>
+    <pre *ngIf="mostrarJson">{{empleados | json}}</pre>
+  </div>
+</div>

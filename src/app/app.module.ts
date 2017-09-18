@@ -16,9 +16,13 @@ import {APP_ROUTING} from './app.routes';
 //services
 import {SessionService} from './services/session.service';
 import {EmpresaService} from './services/empresas.service';
+import {EmpleadosService} from './services/empleados.service';
 //para ng routes
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+// para tabla
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+//para formatear en tabka
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,11 +39,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    Ng2SmartTableModule,
     APP_ROUTING
   ],
   providers: [
     EmpresaService,
-    SessionService
+    SessionService,
+    EmpleadosService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
