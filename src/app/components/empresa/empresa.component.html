@@ -1,52 +1,59 @@
 <div class="main main-container">
-	<div *ngIf="empresa" class="row">
-		<div class="col-md-12">
-      <h3>
-				Nombre:
-			</h3>
-			<p>
-				{{empresa.nombre}}
-			</p>
+	<div *ngIf="empresa" class="row col-md-12">
+		<div class="row col-md-6">
+			<div class="col-md-12">
+				<h3>
+					Nombre:
+				</h3>
+				<p>
+					{{empresa.nombre}}
+				</p>
+			</div>
+			<div class="col-md-12">
+				<h3>
+					Nombre comercial:
+				</h3>
+				<p>
+					{{empresa.nombreComercial}}
+				</p>
+			</div>
+			<div class="col-md-12">
+				<h3>
+					Descripción:
+				</h3>
+				<p>
+					{{empresa.descripcion}}
+				</p>
+			</div>
+			<div class="col-md-12">
+				<h3>
+					Actividad:
+				</h3>
+				<p>
+					{{empresa.actividad}}
+				</p>
+			</div>
+			<div class="col-md-12">
+				<h3>
+					Sector:
+				</h3>
+				<p>
+					{{empresa.sector}}
+				</p>
+			</div>
+			<div class="col-md-12">
+				<h3>
+					Fecha de alta:
+				</h3>
+				<p>
+					{{empresa.fechaAlta | date}}
+				</p>
+			</div>
 		</div>
-		<div class="col-md-12">
-			<h3>
-				Nombre comercial:
-			</h3>
-			<p>
-				{{empresa.nombreComercial}}
-			</p>
-		</div>
-		<div class="col-md-12">
-			<h3>
-				Descripcion:
-			</h3>
-			<p>
-				{{empresa.descripcion}}
-			</p>
-		</div>
-		<div class="col-md-12">
-			<h3>
-				Actividad:
-			</h3>
-			<p>
-				{{empresa.actividad}}
-			</p>
-		</div>
-		<div class="col-md-12">
-			<h3>
-				Sector:
-			</h3>
-			<p>
-				{{empresa.sector}}
-			</p>
-		</div>
-		<div class="col-md-12">
-			<h3>
-				Fecha de alta:
-			</h3>
-			<p>
-				{{empresa.fechaAlta | date}}
-			</p>
+		<div class="row col-md-6">
+				<div class="col-md-12" style="text-align:right;">
+					<img *ngIf="empresa" class="card-img-top img-fluid" [src]="empresa.img" [alt]="empresa.nombre">
+				</div>
 		</div>
     <div style="text-align:right;margin-bottom:30px;" class="col-md-12">
       <button type="button" [routerLink]="['/empresa','editar',empresa.id]"

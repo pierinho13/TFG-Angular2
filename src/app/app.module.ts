@@ -23,6 +23,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 //para formatear en tabka
 import { DatePipe } from '@angular/common';
+import { ResultadoBusquedaComponent } from './components/resultado-busqueda/resultado-busqueda.component';
+import { ProhibidoComponent } from './components/prohibido/prohibido.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { DatePipe } from '@angular/common';
     EmpresaComponent,
     EmpresasComponent,
     SlideshowComponent,
-    EditarEmpresaComponent
+    EditarEmpresaComponent,
+    ResultadoBusquedaComponent,
+    ProhibidoComponent
   ],
   imports: [
     BrowserModule,

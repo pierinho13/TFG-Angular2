@@ -1,0 +1,27 @@
+<h1>Resultado de buscar empleados</h1>
+<div *ngIf="empleados && empleados.length<1" class="row animated fadeIn fast">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      <p>No se encontro ningun resultado</p>
+    </div>
+  </div>
+</div>
+<div class="main main-container">
+  <div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let e of empleados; let i=index">
+      <img class="card-img-top img-fluid" [src]="e.img" [alt]="e.nombre">
+      <div class="card-block">
+        <h4 class="card-title">Datos del empleado</h4>
+        <p class="card-text">{{e.nombre}} {{e.apellidos}}</p>
+        <p class="card-text"><small class="text-muted">Salario {{e.salario | currency:'EUR':true:'4.2-2'}}</small></p>
+        <p class="card-text"><small class="text-muted">Rentabilidad {{e.rentabilidad }} %</small></p>
+        <p class="card-text"><small class="text-muted">Tipo de empleado {{e.tipoEmpleado}}</small></p>
+        <p class="card-text"><small class="text-muted">Fecha de nacimiento {{e.fechaNacimiento | date: 'dd/MM/yyyy'}}</small></p>
+        <p class="card-text"><small class="text-muted">Fecha alta {{e.fechaAlta | date: 'dd/MM/yyyy'}}</small></p>
+        <button (click)="verHeroe(i)"
+        type="button" class="btn btn-outline-primary btn-block">Ver mas boton</button>
+        <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary btn-block">Ver más link</a>
+      </div>
+    </div>
+  </div>
+</div>
